@@ -56,7 +56,7 @@ Users, password hashes, and issues are **saved to plain-text files under `data/`
   - Delete an issue
   - View all registered users
   - Create or remove admin accounts
-- 🎨 Custom-styled Swing UI (card-style forms, consistent color palette, tabbed auth screen)
+- 🎨 Government-inspired green-and-white theme with a municipal seal, card-style forms, styled tables, and a tabbed auth screen
 
 ## Tech Stack
 
@@ -195,7 +195,7 @@ The single `JFrame` that drives the entire UI.
 - Receives the shared `DataStore` and injects it into `UserManager` and `IssueManager`.
 - `showStartupWarnings()` — displays any data warnings (for example, a corrupt file that was backed up) after the window opens.
 - **Auth screen** (`showAuthPanel`): tabbed pane with `Login` and `Register` forms, built with reusable `createFormPanel` / `addAuthField` / `addAuthButton` helpers for consistent styling.
-- **Dashboard** (`showDashboard`): header with welcome message + live stats, a filter bar, a `JTable` of issues (columns: ID, Title, Category, Priority, Status, Department, Location, Reported By, Date), and an action bar.
+- **Dashboard** (`showDashboard`): civic masthead with the welcome message + live stats, a filter bar, a `JTable` of issues (columns: ID, Title, Category, Priority, Status, Department, Location, Reported By, Date), and an action bar.
 - **Filter bar** (`createFilterBar`): search field, status/category/priority/department dropdowns, time-range presets, and *Clear Filters*. Filtering is applied live to the role-scoped issue list, and the stats show filtered counts plus `Showing X of Y`.
 - **Keyboard shortcuts**: `Ctrl+F` focuses the search box; `Esc` clears all filters.
 - **Account controls**: *Change Password* is available to both roles next to *Logout*. Admins see *Users*, which opens a dialog with *Create Admin* and *Remove Admin* actions.
