@@ -94,6 +94,7 @@ Users, password hashes, and issues are **saved to plain-text files under `data/`
 │   ├── issues.csv
 │   ├── meta.properties
 │   └── *.bak                  # Previous version of each file
+├── Run.bat                    # Windows double-click launcher (compiles + starts the app)
 ├── Project.iml                # IntelliJ module definition
 └── README.md
 ```
@@ -226,10 +227,16 @@ java -cp out TestRunner
 
 On first run the app creates a `data/` directory **in the directory you launch it from** (the project root if you use the commands above). Run the app from the same directory each time to keep using the same data. The test suite always uses temporary directories, so it never touches `data/`.
 
+### Run without the terminal (Windows)
+
+Double-click **`Run.bat`** in the project folder. It compiles the current sources into `out\` and launches the app with `javaw`, so no command window stays open. It always starts from the project folder, so it uses the same `data\` folder as the command-line instructions above.
+
+If compilation fails, the window stays open with the errors so you can read them. To make launching even easier, right-click `Run.bat` and choose **Send to → Desktop (create shortcut)**.
+
 ### Build & Run (IDE)
 1. Import the folder as a plain Java project (no Maven/Gradle config needed) in IntelliJ IDEA, Eclipse, or VS Code + Java Extension Pack.
 2. Mark `src` as a source root (all `.java` files there are in the default package). The `tests` folder can be marked as a test source root.
-3. Run `Main.java`.
+3. Use the IDE's Run action (the green Run button) on `Main.java` — no terminal command needed.
 
 ## Usage Guide
 
